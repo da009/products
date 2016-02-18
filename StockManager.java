@@ -70,7 +70,12 @@ public class StockManager
      */
     public int numberInStock(int id)
     {
-        return 0;
+        int amount = 0;
+        if (findProduct(id) != null)
+        {
+            amount = findProduct(id).getQuantity();
+        }
+        return amount;
     }
 
     /**
