@@ -26,7 +26,21 @@ public class StockManager
      */
     public void addProduct(Product item)
     {
-        stock.add(item);
+        boolean rep = false;
+        int cont = 0;
+        while (stock.size() > cont && !rep)
+        {
+            if (stock.get(cont).getID() == item.getID())
+            {
+                System.out.println("El ID introducido ya existe en el stock.");
+                rep = true;
+            }
+            cont++;
+            if (!rep)
+            {
+                stock.add(item);
+            }
+        }
     }
     
     /**
