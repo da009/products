@@ -91,9 +91,24 @@ public class StockManager
      */
     public void printProductDetails()
     {
-        for (Product producto: stock)
+        for (Product producto : stock)
         {
             System.out.println(producto.toString());
+        }
+    }
+    
+    /**
+     * Imprime los detalles de todos los productos cuyo stock está por debajo de un determinado número que 
+     * será pasado como parámetro al método.
+     */
+    public void underGivenNumberInStock(int num)
+    {
+        for (Product producto : stock)
+        {
+            if(producto.getQuantity() < num)
+            {
+                System.out.println(producto.toString());
+            }
         }
     }
 }
