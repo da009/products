@@ -125,4 +125,24 @@ public class StockManager
             }
         }
     }
+    
+    /**
+     * Permite buscar un producto según su nombre.
+     */
+    public Product findProduct(String name)
+    {
+        int cont = 0;
+        boolean hay = false;
+        Product producto = null;
+        while(stock.size() > cont && !hay)
+        {
+            if (stock.get(cont).getName().contains(name))
+            {
+                producto = stock.get(cont);
+                hay = true;
+            }
+            cont++;
+        }
+        return producto;
+    }
 }
